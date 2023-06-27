@@ -142,6 +142,34 @@ This will result in this priority:
 
 Import the Custom Format "Language: German Only":
 
+```json
+{
+  "name": "Language: German Only",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Language GER",
+      "implementation": "LanguageSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 4
+      }
+    },
+    {
+      "name": "NOT German DL",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?i)german\\s*\\.?dl|(?<=\\bGerman\\b.*)(?<!\\bWEB[-_. ])\\bDL\\b|\\[DE\\+[a-z]{2}\\]|\\[[a-z]{2}\\+DE\\]|ger,\\s*[a-z]{3}\\]|\\[[a-z]{3}\\s*,\\s*ger\\]"
+      }
+    }
+  ]
+}
+```
+Set the custom score to `15000`.
+
 
 #### - Prefer English over German if there is no DL Release
 This will result in this priority:
@@ -149,6 +177,35 @@ This will result in this priority:
 2. English language
 3. German language
 
+Import the Custom Format "Language: English Only":
+
+```json
+{
+  "name": "Language: English Only",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Language ENG",
+      "implementation": "LanguageSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 1
+      }
+    },
+    {
+      "name": "NOT German DL",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?i)german\\s*\\.?dl|(?<=\\bGerman\\b.*)(?<!\\bWEB[-_. ])\\bDL\\b|\\[DE\\+[a-z]{2}\\]|\\[[a-z]{2}\\+DE\\]|ger,\\s*[a-z]{3}\\]|\\[[a-z]{3}\\s*,\\s*ger\\]"
+      }
+    }
+  ]
+}
+```
+Set the custom score to `15000`.
 
 ### 9. Quality Upgrades via Custom Formats
 
