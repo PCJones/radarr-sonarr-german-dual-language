@@ -1,4 +1,4 @@
-# Radarr & Sonarr German Dual Language Custom Format
+# Radarr & Sonarr German Dual Language Quality Profiles & Custom Formats Guide
 
 This guide outlines how to configure Radarr and Sonarr to prefer German + English dual releases.
 
