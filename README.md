@@ -2,24 +2,24 @@
 
 This guide outlines how to configure Radarr and Sonarr to prefer German + English dual releases.
 
-# Very important note: 
-# This is missing merging qualities. If you are unfamiliar with that please visit this guide again tomorrow.
-(last Updated: 2023-06-27)
+Last Updated: 2023-06-27
 
 ## Table of Contents
-1. [Contributing](#contributing)
-2. [Important Note](#important-note)
-3. [General Information](#general-information)
-4. [Guide](#guide)
-   * [1. Create a Quality Profile](#1-create-a-quality-profile)
-   * [2. Set the Language](#2-set-the-language)
-   * [3. Set Upgrade Until Custom](#3-set-upgrade-until-custom)
-   * [4. Import the German DL Custom Format](#4-import-the-german-dl-custom-format)
-   * [5. Set Score for German DL](#5-set-score-for-german-dl)
-5. [Optional Steps](#optional-steps)
-   * [Prefer German over English if there is no DL Release](#prefer-german-over-english-if-there-is-no-dl-release)
-   * [Prefer English over German if there is no DL Release](#prefer-english-over-german-if-there-is-no-dl-release)
-6. [Contact & Support](#contact-&-support)
+- [Contributing](#contributing)
+- [Important Note](#important-note)
+- [General Information](#general-information)
+- [Guide](#guide)
+  - [1. Import the German DL Custom Format](#1-import-the-german-dl-custom-format)
+  - [2. Create a Quality Profile](#2-create-a-quality-profile)
+  - [3. Merge Quality](#3-merge-quality)
+  - [4. Set the Language](#4-set-the-language)
+  - [5. Set Upgrade Until Custom](#5-set-upgrade-until-custom)
+  - [6. Set Score for German DL](#6-set-score-for-german-dl)
+- [Optional Steps](#optional-steps)
+  - [Prefer German over English if there is no DL Release](#prefer-german-over-english-if-there-is-no-dl-release)
+  - [Prefer English over German if there is no DL Release](#prefer-english-over-german-if-there-is-no-dl-release)
+- [Quality Upgrades via Custom Formats](#quality-upgrades-via-custom-formats)
+- [Contact & Support](#contact--support)
 
 ## Contributing
 If you have questions, problems or improvements don't hesitate to create an issue or pull request!
@@ -32,16 +32,7 @@ To reliably find German + English Dual Language releases (from now on referred t
 
 ## Guide
 
-### 1. Create a Quality Profile
-Create a Quality Profile based on the Trash Guides for [Radarr](https://trash-guides.info/Radarr/radarr-setup-quality-profiles/#trash-quality-profiles) and [Sonarr](https://trash-guides.info/Sonarr/sonarr-setup-quality-profiles/). If you're already familiar with setting up quality profiles, you may not need to follow these guides exactly, but they're recommended for those new to the process.
-
-### 2. Set the Language
-The language in the quality profile profile must be set to `Any`.
-
-### 3. Set Upgrade Until Custom
-In your quality profile set the value of "Upgrade Until Custom" to `50000`
-
-### 4. Import the German DL Custom Format
+### 1. Import the German DL Custom Format
 Import the Custom Format "German DL":
 
 ```json
@@ -63,7 +54,32 @@ Import the Custom Format "German DL":
 ```
 This custom format matches all possible combinations of "German DL" (without being falsely triggered by WEB-DL). It also matches combinations of [ger,eng] and [DE+EN] which can be found on some torrents.
 
-### 5. Set Score for German DL
+### 2. Create a Quality Profile
+Create a Quality Profile based on the Trash Guides for [Radarr](https://trash-guides.info/Radarr/radarr-setup-quality-profiles/#trash-quality-profiles) and [Sonarr](https://trash-guides.info/Sonarr/sonarr-setup-quality-profiles/). If you're already familiar with setting up quality profiles, you may not need to follow these guides exactly, but they're recommended for those new to the process.
+
+### 3. Merge Quality
+
+In order to prefer German DL over quality, we need to merge all desired qualities into a single group. 
+![merge animation](https://trash-guides.info/Radarr/Tips/images/merge.gif)
+
+How to merge qualities - *animation from [TRaSH Guides](https://trash-guides.info/Radarr/Tips/Merge-quality/) ([MIT License](https://github.com/TRaSH-Guides/Guides/blob/master/LICENSE))*.
+
+In this example we'll want to prefer the quality in this descending order: Remux-1080p -> Bluray-1080p -> WEBDL-1080 -> Bluray-720p
+
+Here is how it should look after merging the qualities:
+
+![Merge Qualities 1](https://raw.githubusercontent.com/PCJones/radarr-sonarr-german-dual-language/main/img/merge_qualities_1.png)
+![Merge Qualities 2](https://raw.githubusercontent.com/PCJones/radarr-sonarr-german-dual-language/main/img/merge_qualities_2.png)
+
+Despite merging the qualities, it's still possible to upgrade them through custom formats. More details on that can be found in the section [Quality Upgrades via Custom Formats](#quality-upgrades-via-custom-formats).
+
+### 4. Set the Language
+The language in the quality profile profile must be set to `Any`.
+
+### 5. Set Upgrade Until Custom
+In your quality profile set the value of "Upgrade Until Custom" to `50000`
+
+### 6. Set Score for German DL
 In the Quality Profile settings, set the score for the German DL custom format to `20000`.
 
 ## Optional Steps
@@ -76,35 +92,6 @@ This will result in this priority:
 
 Import the Custom Format "Language: German Only":
 
-```json
-{
-  "name": "Language: German Only",
-  "includeCustomFormatWhenRenaming": false,
-  "specifications": [
-    {
-      "name": "Language GER",
-      "implementation": "LanguageSpecification",
-      "negate": false,
-      "required": true,
-      "fields": {
-        "value": 4
-      }
-    },
-    {
-      "name": "NOT German DL",
-      "implementation": "ReleaseTitleSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "(?i)german\\s*\\.?dl|(?<=\\bGerman\\b.*)(?<!\\bWEB[-_. ])\\bDL\\b|\\[DE\\+[a-z]{2}\\]|\\[[a-z]{2}\\+DE\\]|ger,\\s*[a-z]{3}\\]|\\[[a-z]{3}\\s
-
-*,\\s*ger\\]"
-      }
-    }
-  ]
-}
-```
-Set the custom score to `15000`.
 
 ### Prefer English over German if there is no DL Release
 This will result in this priority:
@@ -112,35 +99,26 @@ This will result in this priority:
 2. English language
 3. German language
 
-Import the Custom Format "Language: English Only":
 
-```json
-{
-  "name": "Language: English Only",
-  "includeCustomFormatWhenRenaming": false,
-  "specifications": [
-    {
-      "name": "Language ENG",
-      "implementation": "LanguageSpecification",
-      "negate": false,
-      "required": true,
-      "fields": {
-        "value": 1
-      }
-    },
-    {
-      "name": "NOT German DL",
-      "implementation": "ReleaseTitleSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": "(?i)german\\s*\\.?dl|(?<=\\bGerman\\b.*)(?<!\\bWEB[-_. ])\\bDL\\b|\\[DE\\+[a-z]{2}\\]|\\[[a-z]{2}\\+DE\\]|ger,\\s*[a-z]{3}\\]|\\[[a-z]{3}\\s*,\\s*ger\\]"
-      }
-    }
-  ]
-}
-```
-Set the custom score to `15000`.
+## Quality Upgrades via Custom Formats
+
+We want to prioritize German DL releases and upgrade to higher qualities within that subset.
+
+This guide provides several examples of Custom Formats for different types of releases, such as Bluray, WEBDL, and WebRip, in different resolutions, such as 720p, 1080p, and 2160p. 
+
+.....
+
+> Note: If you require a custom format for a different quality, import one of the above examples and modify the conditions accordingly. It should be relatively straightforward.
+
+In the [previous example](https://raw.githubusercontent.com/PCJones/radarr-sonarr-german-dual-language/main/img/merge_qualities_2.png) where we looked for Remux-1080p, Bluray-1080p, WEBDL-1080p, and Bluray-720p, we would need to add a custom format for each of these.
+
+Next, assign scores to these custom formats. Assign `0` for the lowest quality, `2000` for the second lowest, `4000` for the next, and so on, increasing the score by `2000` each time. This scoring system will prioritize higher quality formats when they become available. 
+
+Here is an example of what the scoring should look like:
+
+![Custom Format Quality](https://github.com/PCJones/radarr-sonarr-german-dual-language/blob/main/img/custom_format_quality.png?raw=true)
+
+Now, whenever a higher-quality German DL release becomes available, your setup will automatically upgrade to it.
 
 ## Contact & Support
 - Feel free to create an Issue if you need support. 
