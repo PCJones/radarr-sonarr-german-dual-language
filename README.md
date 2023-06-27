@@ -104,8 +104,6 @@ This will result in this priority:
 
 We want to prioritize German DL releases and upgrade to higher qualities within that subset.
 
-This guide provides several examples of Custom Formats for different types of releases, such as Bluray, WEBDL, and WebRip, in different resolutions, such as 720p, 1080p, and 2160p. 
-
 Custom Formats:
 
 <details>
