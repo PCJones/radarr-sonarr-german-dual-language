@@ -2,6 +2,10 @@
 
 This guide outlines how to configure Radarr and Sonarr to prefer German + English dual releases.
 
+# Very important note: 
+# This is missing merging qualities. If you are unfamiliar with that please visit this guide again tomorrow.
+(last Updated: 2023-06-27)
+
 ## Table of Contents
 1. [Contributing](#contributing)
 2. [Important Note](#important-note)
