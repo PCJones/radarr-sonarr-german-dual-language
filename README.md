@@ -56,7 +56,7 @@ The following custom format should be imported:
 This custom format matches all possible combinations of "German DL" (without being falsely triggered by WEB-DL). It also matches combinations of [ger,eng] and [DE+EN] which can be found on some torrents.
 
 ### 4. Set Score for German DL
-In the Quality Profile settings, set the score for the German DL custom format to 20000.
+In the Quality Profile settings, set the score for the German DL custom format to `20000`.
 
 ## Optional Steps
 
@@ -96,7 +96,7 @@ Import the Custom Format "Language: German Only":
   ]
 }
 ```
-Set the custom score to 15000.
+Set the custom score to `15000`.
 
 ### Prefer English over German if there is no DL Release
 This will result in this priority:
@@ -132,7 +132,7 @@ Import the Custom Format "Language: English Only":
   ]
 }
 ```
-Set the custom score to 15000.
+Set the custom score to `15000`.
 
 ## Contact & Support
 - Feel free to create an Issue if you need support. 
