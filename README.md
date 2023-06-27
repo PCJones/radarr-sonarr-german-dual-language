@@ -16,12 +16,11 @@ Last Updated: 2023-06-27
   - [4. Merge Quality](#4-merge-quality)
   - [5. Set the Language](#5-set-the-language)
   - [6. Set Upgrade Until Custom](#6-set-upgrade-until-custom)
-  - [7. Set Score for German DL](#7-set-score-for-german-dl)
-  - [8. Set Score for Language: Not ENG/GER](#8-set-score-for-language-not-engger)
-  - [9. Prefer Language](#9-prefer-language)
+  - [7. Set Custom Format Scores](#7-set-custom-format-scores)
+  - [8. Prefer Language](#8-prefer-language)
     - [Prefer German over English if there is no DL Release](#--prefer-german-over-english-if-there-is-no-dl-release)
     - [Prefer English over German if there is no DL Release](#--prefer-english-over-german-if-there-is-no-dl-release)
-  - [10. Quality Upgrades via Custom Formats](#10-quality-upgrades-via-custom-formats)
+  - [9. Quality Upgrades via Custom Formats](#9-quality-upgrades-via-custom-formats)
 - [Contact & Support](#contact--support)
 
 ## Contributing
@@ -125,13 +124,15 @@ The language in the quality profile profile must be set to `Any`.
 ### 6. Set Upgrade Until Custom
 In your quality profile set the value of "Upgrade Until Custom" to `50000`
 
-### 7. Set Score for German DL
-In the Quality Profile settings, set the score for the German DL custom format to `20000`.
+### 7. Set Custom Format Scores
+In the Quality Profile settings, set the scores for the custom formats as follows:
 
-### 8. Set Score for Language: Not ENG/GER
-In the Quality Profile settings, set the score for the Language: Not ENG/GER custom format to `-25000`.
+| Custom Format         | Score  |
+|-----------------------|--------|
+| German DL             | 20000  |
+| Language: Not ENG/GER | -25000 |
 
-### 9. Prefer Language
+### 8. Prefer Language
 
 #### - Prefer German over English if there is no DL Release
 This will result in this priority:
@@ -149,7 +150,7 @@ This will result in this priority:
 3. German language
 
 
-### 10. Quality Upgrades via Custom Formats
+### 9. Quality Upgrades via Custom Formats
 
 We want to prioritize German DL releases and upgrade to higher qualities within that subset.
 
