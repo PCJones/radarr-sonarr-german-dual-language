@@ -8,9 +8,10 @@ This guide outlines how to configure Radarr and Sonarr to prefer German + Englis
 3. [General Information](#general-information)
 4. [Guide](#guide)
    * [1. Create a Quality Profile](#1-create-a-quality-profile)
-   * [2. Set the Language Profile](#2-set-the-language-profile)
-   * [3. Import the German DL Custom Format](#3-import-the-german-dl-custom-format)
-   * [4. Set Score for German DL](#4-set-score-for-german-dl)
+   * [2. Set the Language](#2-set-the-language)
+   * [3. Set Upgrade Until Custom](#3-set-upgrade-until-custom)
+   * [4. Import the German DL Custom Format](#4-import-the-german-dl-custom-format)
+   * [5. Set Score for German DL](#5-set-score-for-german-dl)
 5. [Optional Steps](#optional-steps)
    * [Prefer German over English if there is no DL Release](#prefer-german-over-english-if-there-is-no-dl-release)
    * [Prefer English over German if there is no DL Release](#prefer-english-over-german-if-there-is-no-dl-release)
@@ -30,10 +31,13 @@ To reliably find German + English Dual Language releases (from now on referred t
 ### 1. Create a Quality Profile
 Create a Quality Profile based on the Trash Guides for [Radarr](https://trash-guides.info/Radarr/radarr-setup-quality-profiles/#trash-quality-profiles) and [Sonarr](https://trash-guides.info/Sonarr/sonarr-setup-quality-profiles/). If you're already familiar with setting up quality profiles, you may not need to follow these guides exactly, but they're recommended for those new to the process.
 
-### 2. Set the Language Profile
-The language profile must be set to `Any`.
+### 2. Set the Language
+The language in the quality profile profile must be set to `Any`.
 
-### 3. Import the German DL Custom Format
+### 3. Set Upgrade Until Custom
+In your quality profile set the value of "Upgrade Until Custom" to `50000`
+
+### 4. Import the German DL Custom Format
 Import the Custom Format "German DL":
 
 ```json
@@ -55,7 +59,7 @@ Import the Custom Format "German DL":
 ```
 This custom format matches all possible combinations of "German DL" (without being falsely triggered by WEB-DL). It also matches combinations of [ger,eng] and [DE+EN] which can be found on some torrents.
 
-### 4. Set Score for German DL
+### 5. Set Score for German DL
 In the Quality Profile settings, set the score for the German DL custom format to `20000`.
 
 ## Optional Steps
