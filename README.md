@@ -8,6 +8,7 @@ Last Updated: 2023-06-27
 - [Contributing](#contributing)
 - [Important Note](#important-note)
 - [General Information](#general-information)
+- [I don't want dual language, I want to prefer German but use English as fallback (or vice versa)](#i-dont-want-dual-language-i-want-to-prefer-german-but-use-english-as-fallback-or-vice-versa)
 - [Guide](#guide)
   - [1. Import the German DL Custom Format](#1-import-the-german-dl-custom-format)
   - [2. Create a Quality Profile](#2-create-a-quality-profile)
@@ -15,10 +16,10 @@ Last Updated: 2023-06-27
   - [4. Set the Language](#4-set-the-language)
   - [5. Set Upgrade Until Custom](#5-set-upgrade-until-custom)
   - [6. Set Score for German DL](#6-set-score-for-german-dl)
-- [Optional Steps](#optional-steps)
-  - [Prefer German over English if there is no DL Release](#prefer-german-over-english-if-there-is-no-dl-release)
-  - [Prefer English over German if there is no DL Release](#prefer-english-over-german-if-there-is-no-dl-release)
-- [Quality Upgrades via Custom Formats](#quality-upgrades-via-custom-formats)
+  - [7. Prefer Language](#7-prefer-language)
+    - [Prefer German over English if there is no DL Release](#--prefer-german-over-english-if-there-is-no-dl-release)
+    - [Prefer English over German if there is no DL Release](#--prefer-english-over-german-if-there-is-no-dl-release)
+  - [8. Quality Upgrades via Custom Formats](#8-quality-upgrades-via-custom-formats)
 - [Contact & Support](#contact--support)
 
 ## Contributing
@@ -29,6 +30,9 @@ This setup requires Sonarr v4 Beta. Sonarr v3 will not work for this setup. Howe
 
 ## General Information
 To reliably find German + English Dual Language releases (from now on referred to as "German DL" as the German Scene refers to them), it's best to have an indexer that specializes in these types of releases.
+
+## I don't want dual language, I want to prefer German but use English as fallback (or vice versa)
+No problem at all! Just follow every step in the guide but skip every step about the "German DL" custom format. At [7. Prefer Language](#7-prefer-language) pick the one that fits your setup and again, just ignore the value for German DL. 
 
 ## Guide
 
@@ -71,7 +75,7 @@ Here is how it should look after merging the qualities:
 ![Merge Qualities 1](https://raw.githubusercontent.com/PCJones/radarr-sonarr-german-dual-language/main/img/merge_qualities_1.png)
 ![Merge Qualities 2](https://raw.githubusercontent.com/PCJones/radarr-sonarr-german-dual-language/main/img/merge_qualities_2.png)
 
-Despite merging the qualities, it's still possible to upgrade them through custom formats. More details on that can be found in the section [Quality Upgrades via Custom Formats](#quality-upgrades-via-custom-formats).
+Despite merging the qualities, it's still possible to upgrade them through custom formats. More details on that can be found in the section [Quality Upgrades via Custom Formats](#8-quality-upgrades-via-custom-formats).
 
 ### 4. Set the Language
 The language in the quality profile profile must be set to `Any`.
@@ -82,9 +86,9 @@ In your quality profile set the value of "Upgrade Until Custom" to `50000`
 ### 6. Set Score for German DL
 In the Quality Profile settings, set the score for the German DL custom format to `20000`.
 
-## Optional Steps
+### 7. Prefer Language
 
-### Prefer German over English if there is no DL Release
+#### - Prefer German over English if there is no DL Release
 This will result in this priority:
 1. German + English language
 2. German language
@@ -93,14 +97,14 @@ This will result in this priority:
 Import the Custom Format "Language: German Only":
 
 
-### Prefer English over German if there is no DL Release
+#### - Prefer English over German if there is no DL Release
 This will result in this priority:
 1. German + English language
 2. English language
 3. German language
 
 
-## Quality Upgrades via Custom Formats
+### 8. Quality Upgrades via Custom Formats
 
 We want to prioritize German DL releases and upgrade to higher qualities within that subset.
 
