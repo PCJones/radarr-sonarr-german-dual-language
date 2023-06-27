@@ -11,15 +11,17 @@ Last Updated: 2023-06-27
 - [I don't want dual language, I want to prefer German but use English as fallback (or vice versa)](#i-dont-want-dual-language-i-want-to-prefer-german-but-use-english-as-fallback-or-vice-versa)
 - [Guide](#guide)
   - [1. Import the German DL Custom Format](#1-import-the-german-dl-custom-format)
-  - [2. Create a Quality Profile](#2-create-a-quality-profile)
-  - [3. Merge Quality](#3-merge-quality)
-  - [4. Set the Language](#4-set-the-language)
-  - [5. Set Upgrade Until Custom](#5-set-upgrade-until-custom)
-  - [6. Set Score for German DL](#6-set-score-for-german-dl)
-  - [7. Prefer Language](#7-prefer-language)
+  - [2. Import the Language: Not ENG/GER Custom Format](#2-import-the-language-not-engger-custom-format)
+  - [3. Create a Quality Profile](#3-create-a-quality-profile)
+  - [4. Merge Quality](#4-merge-quality)
+  - [5. Set the Language](#5-set-the-language)
+  - [6. Set Upgrade Until Custom](#6-set-upgrade-until-custom)
+  - [7. Set Score for German DL](#7-set-score-for-german-dl)
+  - [8. Set Score for Language: Not ENG/GER](#8-set-score-for-language-not-engger)
+  - [9. Prefer Language](#9-prefer-language)
     - [Prefer German over English if there is no DL Release](#--prefer-german-over-english-if-there-is-no-dl-release)
     - [Prefer English over German if there is no DL Release](#--prefer-english-over-german-if-there-is-no-dl-release)
-  - [8. Quality Upgrades via Custom Formats](#8-quality-upgrades-via-custom-formats)
+  - [10. Quality Upgrades via Custom Formats](#10-quality-upgrades-via-custom-formats)
 - [Contact & Support](#contact--support)
 
 ## Contributing
@@ -58,10 +60,50 @@ Import the Custom Format "German DL":
 ```
 This custom format matches all possible combinations of "German DL" (without being falsely triggered by WEB-DL). It also matches combinations of [ger,eng] and [DE+EN] which can be found on some torrents.
 
-### 2. Create a Quality Profile
+### 2. Import the Language: Not ENG/GER Custom Format
+Import the Custom Format "Language: Not ENG/GER":
+
+```json
+{
+  "name": "Language: Not ENG/GER",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Not English Language",
+      "implementation": "LanguageSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 1
+      }
+    },
+    {
+      "name": "Not German Language",
+      "implementation": "LanguageSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 4
+      }
+    },
+    {
+      "name": "Not German in Title",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?i)\\bgerman\\b"
+      }
+    }
+  ]
+}
+```
+This custom format is there to exclude any languages other than German and English.
+
+### 3. Create a Quality Profile
 Create a Quality Profile based on the Trash Guides for [Radarr](https://trash-guides.info/Radarr/radarr-setup-quality-profiles/#trash-quality-profiles) and [Sonarr](https://trash-guides.info/Sonarr/sonarr-setup-quality-profiles/). If you're already familiar with setting up quality profiles, you may not need to follow these guides exactly, but they're recommended for those new to the process.
 
-### 3. Merge Quality
+### 4. Merge Quality
 
 In order to prefer German DL over quality, we need to merge all desired qualities into a single group. 
 ![merge animation](https://trash-guides.info/Radarr/Tips/images/merge.gif)
@@ -77,16 +119,19 @@ Here is how it should look after merging the qualities:
 
 Despite merging the qualities, it's still possible to upgrade them through custom formats. More details on that can be found in the section [Quality Upgrades via Custom Formats](#8-quality-upgrades-via-custom-formats).
 
-### 4. Set the Language
+### 5. Set the Language
 The language in the quality profile profile must be set to `Any`.
 
-### 5. Set Upgrade Until Custom
+### 6. Set Upgrade Until Custom
 In your quality profile set the value of "Upgrade Until Custom" to `50000`
 
-### 6. Set Score for German DL
+### 7. Set Score for German DL
 In the Quality Profile settings, set the score for the German DL custom format to `20000`.
 
-### 7. Prefer Language
+### 8. Set Score for Language: Not ENG/GER
+In the Quality Profile settings, set the score for the Language: Not ENG/GER custom format to `-25000`.
+
+### 9. Prefer Language
 
 #### - Prefer German over English if there is no DL Release
 This will result in this priority:
@@ -104,7 +149,7 @@ This will result in this priority:
 3. German language
 
 
-### 8. Quality Upgrades via Custom Formats
+### 10. Quality Upgrades via Custom Formats
 
 We want to prioritize German DL releases and upgrade to higher qualities within that subset.
 
