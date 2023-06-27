@@ -33,7 +33,7 @@ This setup requires Sonarr v4 Beta. Sonarr v3 will not work. However, Sonarr v4 
 To reliably find German + English Dual Language releases (from now on referred to as "German DL" as the German Scene refers to them), it's best to have an indexer that specializes in these types of releases.
 
 ## I don't want dual language, I want to prefer German but use English as fallback (or vice versa)
-No problem at all! Just follow every step in the guide but skip every step about the "German DL" custom format. At [Prefer Language](#8-prefer-language) pick the one that fits your setup and again, just ignore the value for German DL. 
+No problem at all! Just follow every step in the guide but skip every step about the "German DL" custom format. At [Prefer Language](#8-prefer-language) pick the one that fits your setup and then **remove the "NOT German DL" condition** before saving. Sorry if this sounds complicated, I'll soon create an extra page just for this scenario!
 
 ## Guide
 
