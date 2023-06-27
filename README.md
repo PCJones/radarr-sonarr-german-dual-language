@@ -25,7 +25,7 @@ Last Updated: 2023-06-27
 If you have questions, problems or improvements don't hesitate to create an issue or pull request!
 
 ## Important Note
-This setup requires Sonarr v4 Beta. Sonarr v3 will not work for this setup. However, Sonarr v4 Beta is quite stable and should not present issues.
+This setup requires Sonarr v4 Beta. Sonarr v3 will not work for this setup. However, Sonarr v4 Beta is quite stable and should not present many issues if any at all.
 
 ## General Information
 To reliably find German + English Dual Language releases (from now on referred to as "German DL" as the German Scene refers to them), it's best to have an indexer that specializes in these types of releases.
