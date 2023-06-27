@@ -34,7 +34,7 @@ Create a Quality Profile based on the Trash Guides for [Radarr](https://trash-gu
 The language profile must be set to `Any`.
 
 ### 3. Import the German DL Custom Format
-The following custom format should be imported:
+Import the Custom Format "German DL":
 
 ```json
 {
