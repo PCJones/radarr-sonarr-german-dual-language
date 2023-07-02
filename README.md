@@ -558,7 +558,7 @@ Import the Custom Formats you need:
 
 In the [previous example](https://raw.githubusercontent.com/PCJones/radarr-sonarr-german-dual-language/main/img/merge_qualities_2.png) where we looked for Remux-1080p, Bluray-1080p, WEBDL-1080p, and Bluray-720p, we would need to add a custom format for each of these.
 
-Next, assign scores to these custom formats. Assign `0` for the lowest quality, `2000` for the second lowest, `4000` for the next, and so on, increasing the score by `2000` each time. This scoring system will prioritize and upgrade to higher quality formats when they become available. 
+Next, assign scores to these custom formats in the quality profile. Assign `0` for the lowest quality, `2000` for the second lowest, `4000` for the next, and so on, increasing the score by `2000` each time. This scoring system will prioritize and upgrade to higher quality formats when they become available. 
 
 Here is an example of what the scoring should look like:
 
