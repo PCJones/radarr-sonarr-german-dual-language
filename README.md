@@ -2,7 +2,7 @@
 
 This guide outlines how to configure and fully automate Radarr and Sonarr to prefer German + English dual releases.
 
-Last Updated: 2023-06-28
+Last Updated: 2023-07-02
 
 ## Table of Contents
 - [Contributing](#contributing)
@@ -211,7 +211,7 @@ Set the custom score to `15000`.
 
 We want to prioritize German DL releases and upgrade to higher qualities within that subset.
 
-Custom Formats:
+Import the Custom Formats you need:
 
 <details>
 <summary><b>Bluray-1080p</b></summary>
