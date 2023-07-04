@@ -4,6 +4,8 @@ In dieser Anleitung wird erklärt, wie Radarr und Sonarr vollautomatisiert konfi
 
 Letztes Update: 04.07.2023
 
+# [English Guide](https://github.com/PCJones/radarr-sonarr-german-dual-language/)
+
 ## Inhaltsverzeichnis
 - [Mitwirken](#mitwirken)
 - [Wichtiger Hinweis](#wichtiger-hinweis)
