@@ -105,7 +105,7 @@ Dieses Custom Format dient dazu, alle anderen Sprachen außer Deutsch und Englis
 ### 3. Erstelle ein Quality Profile
 Erstelle ein Quality Profile basierend auf den Trash Guides für [Radarr](https://trash-guides.info/Radarr/radarr-setup-quality-profiles/#trash-quality-profiles) und [Sonarr](https://trash-guides.info/Sonarr/sonarr-setup-quality-profiles/). Wenn du bereits Erfahrung mit Quality Profiles hast, musst du diese Anleitungen nicht genau befolgen, aber sie sind für Neueinsteiger empfehlenswert.
 
-### 4. Führe Qualitäten zusammen
+### 4. Qualitäten zusammenführen (merge qualities)
 
 Um German DL gegenüber Qualität zu bevorzugen, müssen wir alle gewünschten Qualitäten in einer Gruppe zusammenführen (Merge qualities auf Englisch). 
 ![Merge qualities animation](https://trash-guides.info/Radarr/Tips/images/merge.gif)
