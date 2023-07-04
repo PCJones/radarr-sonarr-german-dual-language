@@ -20,8 +20,8 @@ Letztes Update: 04.07.2023
   - [6. Setze Upgrade Until Custom](#6-setze-upgrade-until-custom)
   - [7. Lege Custom Format Scores fest](#7-lege-custom-format-scores-fest)
   - [8. Sprache bevorzugen](#8-sprache-bevorzugen) 
-    - [Bevorzuge Deutsch vor Englisch, wenn kein DL Release vorhanden ist](#bevorzuge-deutsch-vor-englisch-wenn-kein-dl-release-vorhanden-ist)
-    - [Bevorzuge Englisch vor Deutsch, wenn kein DL Release vorhanden ist](#bevorzuge-englisch-vor-deutsch-wenn-kein-dl-release-vorhanden-ist)
+    - [Bevorzuge Deutsch vor Englisch, wenn kein DL Release vorhanden ist](#--bevorzuge-deutsch-vor-englisch-wenn-kein-dl-release-vorhanden-ist)
+    - [Bevorzuge Englisch vor Deutsch, wenn kein DL Release vorhanden ist](#--bevorzuge-englisch-vor-deutsch-wenn-kein-dl-release-vorhanden-ist)
   - [9. Qualitäts-Upgrades durch Custom Formats](#9-qualitäts-upgrades-durch-custom-formats)
 - [Kontakt & Support](#kontakt--support)
 
