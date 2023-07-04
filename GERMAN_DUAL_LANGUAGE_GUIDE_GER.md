@@ -15,7 +15,7 @@ Letztes Update: 04.07.2023
   - [1. Importiere das German DL Custom Format](#1-importiere-das-german-dl-custom-format)
   - [2. Importiere das Language: Not ENG/GER Custom Format](#2-importiere-das-language-not-engger-custom-format)
   - [3. Erstelle ein Quality Profile](#3-erstelle-ein-quality-profile)
-  - [4. Führe Qualitäten zusammen](#4-führe-qualitäten-zusammen)
+  - [4. Qualitäten zusammenführen (merge qualities)](#4-qualit%C3%A4ten-zusammenf%C3%BChren-merge-qualities)
   - [5. Sprache einstellen](#5-sprache-einstellen)
   - [6. Setze Upgrade Until Custom](#6-setze-upgrade-until-custom)
   - [7. Lege Custom Format Scores fest](#7-lege-custom-format-scores-fest)
