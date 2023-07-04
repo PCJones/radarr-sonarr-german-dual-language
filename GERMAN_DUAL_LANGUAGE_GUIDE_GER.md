@@ -1,6 +1,6 @@
 # Anleitung: Radarr & Sonarr Deutsch & Englisch mehrsprachig - mit Quality Profiles & Custom Formats
 
-In dieser Anleitung wird erklärt, wie Radarr und Sonarr vollautomatisiert konfiguriert werden können, um German Dual Language (Deutsche + Englische Tonspur) Releases zu bevorzugen.
+In dieser Anleitung wird erklärt, wie Radarr und Sonarr konfiguriert werden können, um vollautomatisiert German Dual Language (Deutsche + Englische Tonspur) Releases zu bevorzugen.
 
 Letztes Update: 04.07.2023
 
