@@ -569,7 +569,7 @@ Hier ist ein Beispiel dafür, wie die Punktevergabe aussehen sollte:
 
 ![Custom Format Quality](https://github.com/PCJones/radarr-sonarr-german-dual-language/blob/main/img/custom_format_quality.png?raw=true)
 
-Jetzt wird dein Setup immer dann auf eine höhere Qualität upgraden, wenn eine German DL Release in höherer Qualität verfügbar wird.
+Jetzt werden deine Filme und Serien immer dann auf eine höhere Qualität upgraden, sobald ein German DL Release in höherer Qualität verfügbar wird.
 
 ## Kontakt & Support
 - Öffne gerne ein Issue auf GitHub falls du Unterstützung benötigst.
