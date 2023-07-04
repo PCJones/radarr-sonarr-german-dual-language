@@ -29,7 +29,7 @@ Letztes Update: 04.07.2023
 Wenn du Fragen, Probleme oder Verbesserungsvorschläge hast, erstelle gerne ein Issue oder einen Pull Request!
 
 ## Wichtiger Hinweis
-Diese Einrichtung erfordert Sonarr v4 Beta. Die Sonarr v4 Beta ist jedoch ziemlich stabil und lässt sich problemlos verwenden.
+Diese Anleitung erfordert Sonarr v4 Beta, Sonarr v3 funktionert nicht, da es dort keine Custom Formats gibt. Die Sonarr v4 Beta ist jedoch ziemlich stabil und lässt sich problemlos verwenden.
 
 ## Allgemeine Informationen
 Um zuverlässig Releases mit Deutscher + Englischer (bzw. Originaler) Tonspur (Als "German DL" in der deutschen Szene bekannt) zu finden, ist es am besten, einen Usenet-Indexer bzw Torrent-Tracker zu verwenden, der auf diese Art von Releases spezialisiert ist.
