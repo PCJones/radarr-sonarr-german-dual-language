@@ -4,6 +4,8 @@ This guide outlines how to configure and fully automate Radarr and Sonarr to pre
 
 Last Updated: 2023-07-04
 
+# [Deutsche Anleitung](https://github.com/PCJones/radarr-sonarr-german-dual-language/blob/main/GERMAN_DUAL_LANGUAGE_GUIDE_GER.md)
+
 ## Table of Contents
 - [Contributing](#contributing)
 - [Important Note](#important-note)
