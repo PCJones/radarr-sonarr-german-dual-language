@@ -26,7 +26,7 @@ Letztes Update: 04.07.2023
 - [Kontakt & Support](#kontakt--support)
 
 ## Mitwirken
-Wenn du Fragen, Probleme oder Verbesserungsvorschläge hast, zögere nicht, ein Issue zu eröffnen oder einen Pull Request zu erstellen!
+Wenn du Fragen, Probleme oder Verbesserungsvorschläge hast, erstelle gerne ein Issue oder einen Pull Request!
 
 ## Wichtiger Hinweis
 Diese Einrichtung erfordert Sonarr v4 Beta. Die Sonarr v4 Beta ist jedoch ziemlich stabil und lässt sich problemlos verwenden.
