@@ -2,7 +2,7 @@
 
 This guide outlines how to configure and fully automate Radarr and Sonarr to prefer German + English dual releases.
 
-Last Updated: 2023-07-02
+Last Updated: 2023-07-04
 
 ## Table of Contents
 - [Contributing](#contributing)
@@ -129,8 +129,8 @@ In the Quality Profile settings, set the scores for the custom formats as follow
 
 | Custom Format         | Score  |
 |-----------------------|--------|
-| German DL             | 20000  |
-| Language: Not ENG/GER | -25000 |
+| German DL             | 25000  |
+| Language: Not ENG/GER | -30000 |
 
 ### 8. Prefer Language
 
