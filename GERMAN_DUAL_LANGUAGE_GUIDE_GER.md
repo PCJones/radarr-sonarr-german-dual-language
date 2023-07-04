@@ -22,7 +22,7 @@ Letztes Update: 04.07.2023
   - [8. Sprache bevorzugen](#8-sprache-bevorzugen) 
     - [Bevorzuge Deutsch vor Englisch, wenn kein DL Release vorhanden ist](#bevorzuge-deutsch-vor-englisch-wenn-kein-dl-release-vorhanden-ist)
     - [Bevorzuge Englisch vor Deutsch, wenn kein DL Release vorhanden ist](#bevorzuge-englisch-vor-deutsch-wenn-kein-dl-release-vorhanden-ist)
-  - [9. Qualitäts-Upgrades über Custom Formats](#9-qualitäts-upgrades-über-custom-formats)
+  - [9. Qualitäts-Upgrades durch Custom Formats](#9-qualitäts-upgrades-durch-custom-formats)
 - [Kontakt & Support](#kontakt--support)
 
 ## Mitwirken
@@ -119,7 +119,7 @@ Hier ist, wie es aussehen sollte, nachdem die Qualitäten gemerged wurden:
 ![Qualitäten zusammenführen 1](https://raw.githubusercontent.com/PCJones/radarr-sonarr-german-dual-language/main/img/merge_qualities_1.png)
 ![Qualitäten zusammenführen 2](https://raw.githubusercontent.com/PCJones/radarr-sonarr-german-dual-language/main/img/merge_qualities_2.png)
 
-Obwohl die Qualitäten zusammengeführt sind, ist es immer noch möglich, sie über Custom Formats zu verbessern. Weitere Details dazu kommen im Abschnitt [Qualitäts-Upgrades über Custom Formats](#8-qualitäts-upgrades-über-custom-formats).
+Obwohl die Qualitäten zusammengeführt sind, ist es immer noch möglich, sie über Custom Formats zu verbessern. Weitere Details dazu kommen im Abschnitt [Qualitäts-Upgrades durch Custom Formats](#8-qualitäts-upgrades-durch-custom-formats).
 
 ### 5. Sprache einstellen.
 Die Sprache im Quality Profile muss auf `Any` gesetzt werden.
