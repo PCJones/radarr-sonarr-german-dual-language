@@ -2,7 +2,7 @@
 
 This guide outlines how to configure and fully automate Radarr and Sonarr to prefer German + English dual releases.
 
-Last Updated: 2023-07-04
+Last Updated: 2023-07-11
 
 # [Deutsche Anleitung](https://github.com/PCJones/radarr-sonarr-german-dual-language/blob/main/GERMAN_DUAL_LANGUAGE_GUIDE_GER.md)
 
