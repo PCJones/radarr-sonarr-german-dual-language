@@ -23,6 +23,7 @@ Last Updated: 2023-07-04
     - [Prefer German over English if there is no DL Release](#--prefer-german-over-english-if-there-is-no-dl-release)
     - [Prefer English over German if there is no DL Release](#--prefer-english-over-german-if-there-is-no-dl-release)
   - [9. Quality Upgrades via Custom Formats](#9-quality-upgrades-via-custom-formats)
+  - [10. Optional: Avoid Mic Dubbed Releases](10-optional-avoid-mic-dubbed-releases)
 - [Contact & Support](#contact--support)
 
 ## Contributing
@@ -567,6 +568,40 @@ Here is an example of what the scoring should look like:
 ![Custom Format Quality](https://github.com/PCJones/radarr-sonarr-german-dual-language/blob/main/img/custom_format_quality.png?raw=true)
 
 Now, whenever a higher-quality German DL release becomes available, your setup will automatically upgrade to it.
+
+### 10. Optional: Avoid Mic Dubbed Releases
+
+Mic Dubbed releases are bad quality sound recordings made for example in cinemas that might also contain sounds made by people in there. Very often the first German DL release will have great english soundtrack but a mic dubbed German soundtrack. Unless you are really impatient I highly recommend to avoid them. This is only needed for Radarr, not for Sonarr.
+
+Import the MIC DUB Custom Format:
+
+<details>
+<summary><b>MIC DUB Custom Format</b></summary>
+
+```json
+{
+  "name": "MIC DUB",
+  "includeCustomFormatWhenRenaming": true,
+  "specifications": [
+    {
+      "name": "MD",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "((19|20|21)[0-9]{2}).*?(?<=^|[ .-])MD(?=[ .-]|$).*?(?<=^|[ .-])GERMAN(?=[ .-]|$)|((19|20|21)[0-9]{2}).*?(?<=^|[ .-])GERMAN(?=[ .-]|$).*?(?<=^|[ .-])MD(?=[ .-]|$)"
+      }
+    }
+  ]
+}
+```
+</details>
+
+In the Quality Profile settings, set the scores for the custom format as follows:
+
+| Custom Format         | Score  |
+|-----------------------|--------|
+| MIC DUB             | -25000  |
 
 ## Contact & Support
 - Feel free to create an Issue if you need support. 
