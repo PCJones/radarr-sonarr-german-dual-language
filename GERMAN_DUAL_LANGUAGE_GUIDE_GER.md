@@ -23,6 +23,7 @@ Letztes Update: 04.07.2023
     - [Bevorzuge Deutsch vor Englisch, wenn kein DL Release vorhanden ist](#--bevorzuge-deutsch-vor-englisch-wenn-kein-dl-release-vorhanden-ist)
     - [Bevorzuge Englisch vor Deutsch, wenn kein DL Release vorhanden ist](#--bevorzuge-englisch-vor-deutsch-wenn-kein-dl-release-vorhanden-ist)
   - [9. Qualitäts-Upgrades durch Custom Formats](#9-qualitäts-upgrades-durch-custom-formats)
+  - [10. Optional: Mic Dubbed Tonspuren vermeiden](#10-optional-mic-dubbed-tonspuren-vermeiden)
 - [Kontakt & Support](#kontakt--support)
 
 ## Mitwirken
@@ -570,6 +571,39 @@ Hier ist ein Beispiel dafür, wie die Punktevergabe aussehen sollte:
 ![Custom Format Quality](https://github.com/PCJones/radarr-sonarr-german-dual-language/blob/main/img/custom_format_quality.png?raw=true)
 
 Jetzt werden deine Filme und Serien immer dann auf eine höhere Qualität upgraden, sobald ein German DL Release in höherer Qualität verfügbar wird.
+
+### 10. Optional: Mic Dubbed Tonspuren vermeiden
+Mic Dubbed ("MD") Tonspuren werden z.B. im Kino aufgenommen und haben eine schlechte Soundqualität. Außerdem können sie Geräusche von Zuschauern enthalten. Der erste German DL Release hat oft eine einwandfreie Englische Tonspur, die Deutsche ist aber Mic Dubbed. Falls du nicht total ungeduldig bist empfehle ich sehr, diese zu vermeiden. Da es hier nur um Filme geht ist das Ganze nur für Radarr relevant.
+
+Importiere das MIC DUB Custom Format:
+
+<details>
+<summary><b>MIC DUB Custom Format</b></summary>
+
+```json
+{
+  "name": "MIC DUB",
+  "includeCustomFormatWhenRenaming": true,
+  "specifications": [
+    {
+      "name": "MD",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": "((19|20|21)[0-9]{2}).*?(?<=^|[ .-])MD(?=[ .-]|$).*?(?<=^|[ .-])GERMAN(?=[ .-]|$)|((19|20|21)[0-9]{2}).*?(?<=^|[ .-])GERMAN(?=[ .-]|$).*?(?<=^|[ .-])MD(?=[ .-]|$)"
+      }
+    }
+  ]
+}
+```
+</details>
+
+In den Einstellungen des Quality Profiles setze die Punktzahl für das Custom Format wie folgt:
+
+| Custom Format         | Score  |
+|-----------------------|--------|
+| MIC DUB             | -25000  |
 
 ## Kontakt & Support
 - Öffne gerne ein Issue auf GitHub falls du Unterstützung benötigst.
