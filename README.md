@@ -570,8 +570,7 @@ Here is an example of what the scoring should look like:
 Now, whenever a higher-quality German DL release becomes available, your setup will automatically upgrade to it.
 
 ### 10. Optional: Avoid Mic Dubbed Releases
-
-Mic Dubbed releases are bad quality sound recordings made for example in cinemas that might also contain sounds made by people in there. Very often the first German DL release will have great english soundtrack but a mic dubbed German soundtrack. Unless you are really impatient I highly recommend to avoid them. This is only needed for Radarr, not for Sonarr.
+Mic dubbed releases are poor quality sound recordings made in movie theaters, for example, and may include sounds made by people there. Very often the first German DL release will have great english soundtrack but a mic dubbed German soundtrack. Unless you are really impatient I highly recommend to avoid them. This is only needed for Radarr, not for Sonarr.
 
 Import the MIC DUB Custom Format:
 
