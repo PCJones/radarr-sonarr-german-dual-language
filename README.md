@@ -2,7 +2,7 @@
 
 This guide outlines how to configure and fully automate Radarr and Sonarr to prefer German + English dual releases.
 
-Last Updated: 2023-07-11
+Last Updated: 2023-07-16
 
 # [Deutsche Anleitung](https://github.com/PCJones/radarr-sonarr-german-dual-language/blob/main/GERMAN_DUAL_LANGUAGE_GUIDE_GER.md)
 
@@ -572,6 +572,8 @@ Now, whenever a higher-quality German DL release becomes available, your setup w
 ### 10. Optional: Avoid Mic Dubbed Releases
 Mic dubbed (MD) releases are poor quality sound recordings made in movie theaters, for example, and may include sounds made by people there. Very often the first German DL release will have great english soundtrack but a mic dubbed German soundtrack. Unless you are really impatient I highly recommend to avoid them. This is only needed for Radarr, not for Sonarr.
 
+Even if you don't want to avoid them you should still give it a negative score of something like `-100` so that Radarr will still upgrade to a non mic dubbed release when possible.
+
 Import the MIC DUB Custom Format:
 
 <details>
@@ -600,7 +602,7 @@ In the Quality Profile settings, set the scores for the custom format as follows
 
 | Custom Format         | Score  |
 |-----------------------|--------|
-| MIC DUB             | -25000  |
+| MIC DUB             | -35000  |
 
 ## Contact & Support
 - Feel free to create an Issue if you need support. 
