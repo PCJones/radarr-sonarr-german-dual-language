@@ -575,6 +575,8 @@ Jetzt werden deine Filme und Serien immer dann auf eine höhere Qualität upgrad
 ### 10. Optional: Mic Dubbed Tonspuren vermeiden
 Mic Dubbed ("MD") Tonspuren werden z.B. im Kino aufgenommen und haben eine schlechte Soundqualität. Außerdem können sie Geräusche von Zuschauern enthalten. Der erste German DL Release hat oft eine einwandfreie Englische Tonspur, die Deutsche ist aber Mic Dubbed. Falls du nicht total ungeduldig bist empfehle ich sehr, diese zu vermeiden. Da es hier nur um Filme geht ist das Ganze nur für Radarr relevant.
 
+Wenn du Mic Dubbed releases haben möchtest, empfehle ich trotzdem das Custom Format zu importieren und einen Score von `-100` zu vergeben, damit Radarr den Film upgraded, sobald eine Tonspur in guter Qualität released wird.
+
 Importiere das MIC DUB Custom Format:
 
 <details>
@@ -603,7 +605,7 @@ In den Einstellungen des Quality Profiles setze die Punktzahl für das Custom Fo
 
 | Custom Format         | Score  |
 |-----------------------|--------|
-| MIC DUB             | -25000  |
+| MIC DUB             | -35000  |
 
 ## Kontakt & Support
 - Öffne gerne ein Issue auf GitHub falls du Unterstützung benötigst.
