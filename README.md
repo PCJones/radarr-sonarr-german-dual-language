@@ -23,7 +23,7 @@ Last Updated: 2023-07-16
     - [Prefer German over English if there is no DL Release](#--prefer-german-over-english-if-there-is-no-dl-release)
     - [Prefer English over German if there is no DL Release](#--prefer-english-over-german-if-there-is-no-dl-release)
   - [9. Quality Upgrades via Custom Formats](#9-quality-upgrades-via-custom-formats)
-  - [10. Optional: Avoid Mic Dubbed Releases](10-optional-avoid-mic-dubbed-releases)
+  - [10. Optional: Avoid Mic Dubbed Releases](#10-optional-avoid-mic-dubbed-releases)
 - [Contact & Support](#contact--support)
 
 ## Contributing
