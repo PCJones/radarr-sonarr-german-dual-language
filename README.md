@@ -217,7 +217,7 @@ We want to prioritize German DL releases and upgrade to higher qualities within 
 Import the Custom Formats you need:
 
 <details>
-<summary><b>Bluray-1080p</b></summary>
+<summary><b>Bluray-1080p (Radarr)</b></summary>
 
 ```json
 {
@@ -257,7 +257,47 @@ Import the Custom Formats you need:
 </details>
 
 <details>
-<summary><b>Bluray-2160p</b></summary>
+<summary><b>Bluray-1080p (Sonarr)</b></summary>
+
+```json
+{
+  "name": "Bluray-1080p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Bluray",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 6
+      }
+    },
+    {
+      "name": "1080p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 1080
+      }
+    },
+    {
+      "name": "Not REMUX",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 7
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>Bluray-2160p (Radarr)</b></summary>
 
 ```json
 {
@@ -297,7 +337,47 @@ Import the Custom Formats you need:
 </details>
 
 <details>
-<summary><b>Bluray-720p</b></summary>
+<summary><b>Bluray-2160p (Sonarr)</b></summary>
+
+```json
+{
+  "name": "Bluray-2160p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Bluray",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 6
+      }
+    },
+    {
+      "name": "2160p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 2160
+      }
+    },
+    {
+      "name": "Not REMUX",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 7
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>Bluray-720p (Radarr)</b></summary>
 
 ```json
 {
@@ -329,6 +409,46 @@ Import the Custom Formats you need:
       "required": true,
       "fields": {
         "value": 5
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>Bluray-720p (Sonarr)</b></summary>
+
+```json
+{
+  "name": "Bluray-720p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Bluray",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 6
+      }
+    },
+    {
+      "name": "720p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 720
+      }
+    },
+    {
+      "name": "Not REMUX",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 7
       }
     }
   ]
