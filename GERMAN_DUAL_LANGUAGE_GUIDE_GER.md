@@ -2,7 +2,7 @@
 
 In dieser Anleitung wird erklärt, wie Radarr und Sonarr konfiguriert werden können, um vollautomatisiert German Dual Language (Deutsche + Englische Tonspur) Releases zu bevorzugen.
 
-Letztes Update: 16.07.2023
+Letztes Update: 22.08.2023
 
 # [English Guide](https://github.com/PCJones/radarr-sonarr-german-dual-language/)
 
@@ -220,7 +220,7 @@ Wir möchten German DL Releases priorisieren, aber trotzdem innerhalb dieser Rel
 Importiere die Custom Formats, die du benötigst:
 
 <details>
-<summary><b>Bluray-1080p</b></summary>
+<summary><b>Bluray-1080p (Radarr)</b></summary>
 
 ```json
 {
@@ -260,7 +260,47 @@ Importiere die Custom Formats, die du benötigst:
 </details>
 
 <details>
-<summary><b>Bluray-2160p</b></summary>
+<summary><b>Bluray-1080p (Sonarr)</b></summary>
+
+```json
+{
+  "name": "Bluray-1080p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Bluray",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 6
+      }
+    },
+    {
+      "name": "1080p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 1080
+      }
+    },
+    {
+      "name": "Not REMUX",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 7
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>Bluray-2160p (Radarr)</b></summary>
 
 ```json
 {
@@ -300,7 +340,47 @@ Importiere die Custom Formats, die du benötigst:
 </details>
 
 <details>
-<summary><b>Bluray-720p</b></summary>
+<summary><b>Bluray-2160p (Sonarr)</b></summary>
+
+```json
+{
+  "name": "Bluray-2160p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Bluray",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 6
+      }
+    },
+    {
+      "name": "2160p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 2160
+      }
+    },
+    {
+      "name": "Not REMUX",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 7
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>Bluray-720p (Radarr)</b></summary>
 
 ```json
 {
@@ -332,6 +412,46 @@ Importiere die Custom Formats, die du benötigst:
       "required": true,
       "fields": {
         "value": 5
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>Bluray-720p (Sonarr)</b></summary>
+
+```json
+{
+  "name": "Bluray-720p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Bluray",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 6
+      }
+    },
+    {
+      "name": "720p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 720
+      }
+    },
+    {
+      "name": "Not REMUX",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 7
       }
     }
   ]
@@ -497,7 +617,7 @@ Importiere die Custom Formats, die du benötigst:
 </details>
 
 <details>
-<summary><b>Remux-1080p</b></summary>
+<summary><b>Remux-1080p (Radarr)</b></summary>
 
 ```json
 {
@@ -530,7 +650,47 @@ Importiere die Custom Formats, die du benötigst:
 </details>
 
 <details>
-<summary><b>Remux-2160p</b></summary>
+<summary><b>Remux-1080p (Sonarr)</b></summary>
+
+```json
+{
+  "name": "Remux-1080p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Remux",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 7
+      }
+    },
+    {
+      "name": "1080p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 1080
+      }
+    },
+    {
+      "name": "Not BluRay",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 6
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>Remux-2160p (Radarr)</b></summary>
 
 ```json
 {
@@ -553,6 +713,46 @@ Importiere die Custom Formats, die du benötigst:
       "required": true,
       "fields": {
         "value": 5
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>Remux-2160p (Sonarr)</b></summary>
+
+```json
+{
+  "name": "Remux-2160p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Remux",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 7
+      }
+    },
+    {
+      "name": "2160p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 2160
+      }
+    },
+    {
+      "name": "Not BluRay",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 6
       }
     }
   ]
