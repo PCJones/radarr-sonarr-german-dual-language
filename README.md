@@ -2,7 +2,7 @@
 
 This guide outlines how to configure and fully automate Radarr and Sonarr to prefer German + English dual releases.
 
-Last Updated: 2023-07-16
+Last Updated: 2023-08-22
 
 # [Deutsche Anleitung](https://github.com/PCJones/radarr-sonarr-german-dual-language/blob/main/GERMAN_DUAL_LANGUAGE_GUIDE_GER.md)
 
@@ -614,7 +614,7 @@ Import the Custom Formats you need:
 </details>
 
 <details>
-<summary><b>Remux-1080p</b></summary>
+<summary><b>Remux-1080p (Radarr)</b></summary>
 
 ```json
 {
@@ -647,7 +647,47 @@ Import the Custom Formats you need:
 </details>
 
 <details>
-<summary><b>Remux-2160p</b></summary>
+<summary><b>Remux-1080p (Sonarr)</b></summary>
+
+```json
+{
+  "name": "Remux-1080p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Remux",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 7
+      }
+    },
+    {
+      "name": "1080p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 1080
+      }
+    },
+    {
+      "name": "Not BluRay",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 6
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>Remux-2160p (Radarr)</b></summary>
 
 ```json
 {
@@ -670,6 +710,46 @@ Import the Custom Formats you need:
       "required": true,
       "fields": {
         "value": 5
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>Remux-2160p (Sonarr)</b></summary>
+
+```json
+{
+  "name": "Remux-2160p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "Remux",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 7
+      }
+    },
+    {
+      "name": "2160p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 2160
+      }
+    },
+    {
+      "name": "Not BluRay",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 6
       }
     }
   ]
@@ -728,3 +808,8 @@ In the Quality Profile settings, set the scores for the custom format as follows
 - Feel free to create an Issue if you need support. 
 - [Telegram](https://t.me/pc_jones)
 - Discord: pcjones1
+
+## Changelog:
+| Date         | Change                                                                                                         |
+|--------------|----------------------------------------------------------------------------------------------------------------|
+| 2023-08-2023 | Added BluRay/Remux custom formats for Sonarr because Sonarr doesn't have the Quality Modifier filter  |
