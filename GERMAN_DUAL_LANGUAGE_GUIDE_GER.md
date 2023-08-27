@@ -2,7 +2,7 @@
 
 In dieser Anleitung wird erklärt, wie Radarr und Sonarr konfiguriert werden können, um vollautomatisiert German Dual Language (Deutsche + Englische Tonspur) Releases zu bevorzugen.
 
-Letztes Update: 22.08.2023
+Letztes Update: 27.08.2023
 
 # [English Guide](https://github.com/PCJones/radarr-sonarr-german-dual-language/)
 
@@ -218,7 +218,6 @@ Setze die Punktzahl für das Custom Format "Language: English Only" im Quality P
 Wir möchten German DL Releases priorisieren, aber trotzdem innerhalb dieser Releases auf höhere Qualitäten upgraden.
 
 Importiere die Custom Formats, die du benötigst:
-
 <details>
 <summary><b>Bluray-1080p (Radarr)</b></summary>
 
@@ -460,7 +459,7 @@ Importiere die Custom Formats, die du benötigst:
 </details>
 
 <details>
-<summary><b>WEBDL-1080p</b></summary>
+<summary><b>WEBDL-1080p (Radarr)</b></summary>
 
 ```json
 {
@@ -493,7 +492,40 @@ Importiere die Custom Formats, die du benötigst:
 </details>
 
 <details>
-<summary><b>WEBDL-2160p</b></summary>
+<summary><b>WEBDL-1080p (Sonarr)</b></summary>
+
+```json
+{
+  "name": "WEBDL-1080p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+
+
+      "name": "WEBDL",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 3
+      }
+    },
+    {
+      "name": "1080p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 1080
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>WEBDL-2160p (Radarr)</b></summary>
 
 ```json
 {
@@ -523,8 +555,40 @@ Importiere die Custom Formats, die du benötigst:
 ```
 </details>
 
+
 <details>
-<summary><b>WEBDL-720p</b></summary>
+<summary><b>WEBDL-2160p (Sonarr)</b></summary>
+
+```json
+{
+  "name": "WEBDL-2160p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "WEBDL",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 3
+      }
+    },
+    {
+      "name": "2160p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 2160
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>WEBDL-720p (Radarr)</b></summary>
 
 ```json
 {
@@ -555,7 +619,69 @@ Importiere die Custom Formats, die du benötigst:
 </details>
 
 <details>
-<summary><b>WebRip-1080p</b></summary>
+<summary><b>WEBDL-720p (Sonarr)</b></summary>
+
+```json
+{
+  "name": "WEBDL-720p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "WEBDL",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 3
+      }
+    },
+    {
+      "name": "720p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 720
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>WebRip-1080p (Radarr)</b></summary>
+
+```json
+{
+  "name": "WebRip-1080p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "WebRip",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 8
+      }
+    },
+    {
+      "name": "1080p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 1080
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>WebRip-1080p (Sonarr)</b></summary>
 
 ```json
 {
@@ -586,7 +712,38 @@ Importiere die Custom Formats, die du benötigst:
 </details>
 
 <details>
-<summary><b>WebRip-720p</b></summary>
+<summary><b>WebRip-720p (Radarr)</b></summary>
+
+```json
+{
+  "name": "WebRip-720p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "WebRip",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 8
+      }
+    },
+    {
+      "name": "720p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 720
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>WebRip-720p (Sonarr)</b></summary>
 
 ```json
 {
@@ -759,6 +916,7 @@ Importiere die Custom Formats, die du benötigst:
 }
 ```
 </details>
+
 
 > Hinweis: Wenn du ein Custom Format für eine andere Qualität benötigst, importiere eines der obigen Beispiele und ändere die Bedingungen entsprechend. Das sollte relativ selbsterklärend sein, aber falls du Hilfe brauchst, frag gerne.
 
