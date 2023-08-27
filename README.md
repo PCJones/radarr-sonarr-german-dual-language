@@ -2,7 +2,7 @@
 
 This guide outlines how to configure and fully automate Radarr and Sonarr to prefer German + English dual releases.
 
-Last Updated: 2023-08-22
+Last Updated: 2023-08-27
 
 # [Deutsche Anleitung](https://github.com/PCJones/radarr-sonarr-german-dual-language/blob/main/GERMAN_DUAL_LANGUAGE_GUIDE_GER.md)
 
@@ -457,7 +457,7 @@ Import the Custom Formats you need:
 </details>
 
 <details>
-<summary><b>WEBDL-1080p</b></summary>
+<summary><b>WEBDL-1080p (Radarr)</b></summary>
 
 ```json
 {
@@ -490,7 +490,40 @@ Import the Custom Formats you need:
 </details>
 
 <details>
-<summary><b>WEBDL-2160p</b></summary>
+<summary><b>WEBDL-1080p (Sonarr)</b></summary>
+
+```json
+{
+  "name": "WEBDL-1080p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+
+
+      "name": "WEBDL",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 3
+      }
+    },
+    {
+      "name": "1080p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 1080
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>WEBDL-2160p (Radarr)</b></summary>
 
 ```json
 {
@@ -520,8 +553,40 @@ Import the Custom Formats you need:
 ```
 </details>
 
+
 <details>
-<summary><b>WEBDL-720p</b></summary>
+<summary><b>WEBDL-2160p (Sonarr)</b></summary>
+
+```json
+{
+  "name": "WEBDL-2160p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "WEBDL",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 3
+      }
+    },
+    {
+      "name": "2160p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 2160
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>WEBDL-720p (Radarr)</b></summary>
 
 ```json
 {
@@ -552,7 +617,69 @@ Import the Custom Formats you need:
 </details>
 
 <details>
-<summary><b>WebRip-1080p</b></summary>
+<summary><b>WEBDL-720p (Sonarr)</b></summary>
+
+```json
+{
+  "name": "WEBDL-720p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "WEBDL",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 3
+      }
+    },
+    {
+      "name": "720p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 720
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>WebRip-1080p (Radarr)</b></summary>
+
+```json
+{
+  "name": "WebRip-1080p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "WebRip",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 8
+      }
+    },
+    {
+      "name": "1080p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 1080
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>WebRip-1080p (Sonarr)</b></summary>
 
 ```json
 {
@@ -583,7 +710,38 @@ Import the Custom Formats you need:
 </details>
 
 <details>
-<summary><b>WebRip-720p</b></summary>
+<summary><b>WebRip-720p (Radarr)</b></summary>
+
+```json
+{
+  "name": "WebRip-720p",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "WebRip",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 8
+      }
+    },
+    {
+      "name": "720p",
+      "implementation": "ResolutionSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 720
+      }
+    }
+  ]
+}
+```
+</details>
+
+<details>
+<summary><b>WebRip-720p (Sonarr)</b></summary>
 
 ```json
 {
@@ -812,4 +970,5 @@ In the Quality Profile settings, set the scores for the custom format as follows
 ## Changelog:
 | Date         | Change                                                                                                         |
 |--------------|----------------------------------------------------------------------------------------------------------------|
-| 2023-08-2023 | Added BluRay/Remux custom formats for Sonarr because Sonarr doesn't have the Quality Modifier filter  |
+| 2023-08-22 | Added BluRay/Remux custom formats for Sonarr because Sonarr doesn't have the Quality Modifier filter  |
+| 2023-08-27 | Added different Web-DL/WebRip custom formats for Sonarr and Radarr as they use different internal ids  |
