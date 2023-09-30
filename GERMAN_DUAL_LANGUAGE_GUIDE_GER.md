@@ -2,7 +2,7 @@
 
 In dieser Anleitung wird erklärt, wie Radarr und Sonarr konfiguriert werden können, um vollautomatisiert German Dual Language (Deutsche + Englische Tonspur) Releases zu bevorzugen.
 
-Letztes Update: 27.08.2023
+Letztes Update: 30.09.2023
 
 # [English Guide](https://github.com/PCJones/radarr-sonarr-german-dual-language/)
 
@@ -42,6 +42,10 @@ importiere das, was zu deinem Setup passt und **entferne dann die Bedingung "NOT
 ## Anleitung
 
 ### 1. Importiere das German DL Custom Format
+Falls du nicht weißt, wie man Custom Formats importiert gibt es dafür eine kurze Anleitung:
+[How to import Custom Formats - Trash Guides](https://trash-guides.info/Radarr/Radarr-import-custom-formats/#how-to-import-a-json-custom-format)
+
+
 Importiere das Custom Format "German DL":
 
 ```json
@@ -62,6 +66,45 @@ Importiere das Custom Format "German DL":
 }
 ```
 Dieses Custom Format erkennt alle möglichen Kombinationen von "German DL" (ohne dass es fälschlicherweise von WEB-DL ausgelöst wird). Es erkennt auch Kombinationen von [ger,eng] und [DE+EN], die bei einigen Torrents zu finden sind.
+
+Importiere das Custom Format "German DL 2":
+```json
+ {
+  "name": "German DL 2",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "NOT German DL",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?i)german\\s*\\.?dl|(?<=\\bGerman\\b.*)(?<!\\bWEB[-_. ])\\bDL\\b|\\[DE\\+[a-z]{2}\\]|\\[[a-z]{2}\\+DE\\]|ger,\\s*[a-z]{3}\\]|\\[[a-z]{3}\\s*,\\s*ger\\]"
+      }
+    },
+    {
+      "name": "German",
+      "implementation": "LanguageSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 4
+      }
+    },
+    {
+      "name": "English",
+      "implementation": "LanguageSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 1
+      }
+    }
+  ]
+}
+```
+Dieses Custom Format ist notwendig, um einige zweisprachige Veröffentlichungen zu erkennen, die nicht "German DL" in ihrem Namen haben.
+**Anmerkung**: Dieses Custom Format wurde zu einem späteren Zeitpunkt hinzugefügt und fehlt auf den Screenshots, die später gezeigt werden.
 
 ### 2. Importiere das Language: Not ENG/GER Custom Format
 Importiere das Custom Format "Language: Not ENG/GER":
@@ -134,6 +177,7 @@ In den Einstellungen des Quality Profiles setze die Punktzahlen für die Custom 
 | Custom Format         | Score |
 |-----------------------|-----------|
 | German DL             | 25000     |
+| German DL 2           | 25000     |
 | Language: Not ENG/GER | -30000    |
 
 ### 8. Sprache bevorzugen
