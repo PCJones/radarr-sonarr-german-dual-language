@@ -2,7 +2,7 @@
 
 This guide outlines how to configure and fully automate Radarr and Sonarr to prefer German + English dual releases.
 
-Last Updated: 2023-08-27
+Last Updated: 2023-30-09
 
 # [Deutsche Anleitung](https://github.com/PCJones/radarr-sonarr-german-dual-language/blob/main/GERMAN_DUAL_LANGUAGE_GUIDE_GER.md)
 
@@ -12,7 +12,7 @@ Last Updated: 2023-08-27
 - [General Information](#general-information)
 - [I don't want dual language, I want to prefer German but use English as fallback (or vice versa)](#i-dont-want-dual-language-i-want-to-prefer-german-but-use-english-as-fallback-or-vice-versa)
 - [Guide](#guide)
-  - [1. Import the German DL Custom Format](#1-import-the-german-dl-custom-format)
+  - [1. Import the German DL Custom Formats](#1-import-the-german-dl-custom-formats)
   - [2. Import the Language: Not ENG/GER Custom Format](#2-import-the-language-not-engger-custom-format)
   - [3. Create a Quality Profile](#3-create-a-quality-profile)
   - [4. Merge Quality](#4-merge-quality)
@@ -40,7 +40,10 @@ No problem at all! Just follow every step in the guide but skip every step about
 
 ## Guide
 
-### 1. Import the German DL Custom Format
+### 1. Import the German DL Custom Formats
+If you don't know how to import custom formats have a look at this short guide:
+[How to import Custom Formats - Trash Guides](https://trash-guides.info/Radarr/Radarr-import-custom-formats/#how-to-import-a-json-custom-format)
+
 Import the Custom Format "German DL":
 
 ```json
@@ -61,6 +64,46 @@ Import the Custom Format "German DL":
 }
 ```
 This custom format matches all possible combinations of "German DL" (without being falsely triggered by WEB-DL). It also matches combinations of [ger,eng] and [DE+EN] which can be found on some torrents.
+
+Import the Custom Format "German DL 2":
+
+```json
+ {
+  "name": "German DL 2",
+  "includeCustomFormatWhenRenaming": false,
+  "specifications": [
+    {
+      "name": "NOT German DL",
+      "implementation": "ReleaseTitleSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": "(?i)german\\s*\\.?dl|(?<=\\bGerman\\b.*)(?<!\\bWEB[-_. ])\\bDL\\b|\\[DE\\+[a-z]{2}\\]|\\[[a-z]{2}\\+DE\\]|ger,\\s*[a-z]{3}\\]|\\[[a-z]{3}\\s*,\\s*ger\\]"
+      }
+    },
+    {
+      "name": "German",
+      "implementation": "LanguageSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 4
+      }
+    },
+    {
+      "name": "English",
+      "implementation": "LanguageSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 1
+      }
+    }
+  ]
+}
+```
+This custom format is necessary to detect some dual language releases that do not have "German DL" in their name.
+**Note**: This custom format has been added at a later stage and is missing from screenshots you will see later.
 
 ### 2. Import the Language: Not ENG/GER Custom Format
 Import the Custom Format "Language: Not ENG/GER":
@@ -133,6 +176,7 @@ In the Quality Profile settings, set the scores for the custom formats as follow
 | Custom Format         | Score  |
 |-----------------------|--------|
 | German DL             | 25000  |
+| German DL 2           | 25000  |
 | Language: Not ENG/GER | -30000 |
 
 ### 8. Prefer Language
@@ -972,3 +1016,4 @@ In the Quality Profile settings, set the scores for the custom format as follows
 |--------------|----------------------------------------------------------------------------------------------------------------|
 | 2023-08-22 | Added BluRay/Remux custom formats for Sonarr because Sonarr doesn't have the Quality Modifier filter  |
 | 2023-08-27 | Added different Web-DL/WebRip custom formats for Sonarr and Radarr as they use different internal ids  |
+| 2023-09-30 | Added "German DL 2" custom format to detect dual language releases which have been identified correctly by Sonarr/Radarr but don't have "German DL" in their name |
