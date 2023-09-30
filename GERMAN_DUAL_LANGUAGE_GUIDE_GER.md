@@ -12,7 +12,7 @@ Letztes Update: 30.09.2023
 - [Allgemeine Informationen](#allgemeine-informationen)
 - [Ich möchte keine doppelte Sprache, sondern Deutsch bevorzugen und Englisch als Fallback nutzen (oder umgekehrt)](#ich-möchte-keine-doppelte-sprache-sondern-deutsch-bevorzugen-und-englisch-als-fallback-nutzen-oder-umgekehrt)
 - [Anleitung](#anleitung)
-  - [1. Importiere das German DL Custom Format](#1-importiere-das-german-dl-custom-format)
+  - [1. Importiere die German DL Custom Formast](#1-importiere-die-german-dl-custom-formats)
   - [2. Importiere das Language: Not ENG/GER Custom Format](#2-importiere-das-language-not-engger-custom-format)
   - [3. Erstelle ein Quality Profile](#3-erstelle-ein-quality-profile)
   - [4. Qualitäten zusammenführen (merge qualities)](#4-qualit%C3%A4ten-zusammenf%C3%BChren-merge-qualities)
@@ -41,7 +41,7 @@ importiere das, was zu deinem Setup passt und **entferne dann die Bedingung "NOT
 
 ## Anleitung
 
-### 1. Importiere das German DL Custom Format
+### 1. Importiere die German DL Custom Formats
 Falls du nicht weißt, wie man Custom Formats importiert gibt es dafür eine kurze Anleitung:
 [How to import Custom Formats - Trash Guides](https://trash-guides.info/Radarr/Radarr-import-custom-formats/#how-to-import-a-json-custom-format)
 
