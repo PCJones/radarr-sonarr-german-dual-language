@@ -212,6 +212,15 @@ Importiere das Custom Format "Language: German Only":
       "fields": {
         "value": "(?i)german\\s*\\.?dl|(?<=\\bGerman\\b.*)(?<!\\bWEB[-_. ])\\bDL\\b|\\[DE\\+[a-z]{2}\\]|\\[[a-z]{2}\\+DE\\]|ger,\\s*[a-z]{3}\\]|\\[[a-z]{3}\\s*,\\s*ger\\]"
       }
+    },
+    {
+      "name": "Not English",
+      "implementation": "LanguageSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 1
+      }
     }
   ]
 }
@@ -229,13 +238,11 @@ Importiere das Custom Format "Language: English Only":
 
 ```json
 {
-  "name": "Language: English Only",
+  "name": " Language: English Only",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-     
-
- "name": "Language ENG",
+      "name": "Language ENG",
       "implementation": "LanguageSpecification",
       "negate": false,
       "required": true,
@@ -250,6 +257,15 @@ Importiere das Custom Format "Language: English Only":
       "required": true,
       "fields": {
         "value": "(?i)german\\s*\\.?dl|(?<=\\bGerman\\b.*)(?<!\\bWEB[-_. ])\\bDL\\b|\\[DE\\+[a-z]{2}\\]|\\[[a-z]{2}\\+DE\\]|ger,\\s*[a-z]{3}\\]|\\[[a-z]{3}\\s*,\\s*ger\\]"
+      }
+    },
+    {
+      "name": "NOT German Language",
+      "implementation": "LanguageSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 4
       }
     }
   ]
