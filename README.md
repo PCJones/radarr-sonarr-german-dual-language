@@ -211,6 +211,15 @@ Import the Custom Format "Language: German Only":
       "fields": {
         "value": "(?i)german\\s*\\.?dl|(?<=\\bGerman\\b.*)(?<!\\bWEB[-_. ])\\bDL\\b|\\[DE\\+[a-z]{2}\\]|\\[[a-z]{2}\\+DE\\]|ger,\\s*[a-z]{3}\\]|\\[[a-z]{3}\\s*,\\s*ger\\]"
       }
+    },
+    {
+      "name": "Not English",
+      "implementation": "LanguageSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 1
+      }
     }
   ]
 }
@@ -228,7 +237,7 @@ Import the Custom Format "Language: English Only":
 
 ```json
 {
-  "name": "Language: English Only",
+  "name": " Language: English Only",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
@@ -247,6 +256,15 @@ Import the Custom Format "Language: English Only":
       "required": true,
       "fields": {
         "value": "(?i)german\\s*\\.?dl|(?<=\\bGerman\\b.*)(?<!\\bWEB[-_. ])\\bDL\\b|\\[DE\\+[a-z]{2}\\]|\\[[a-z]{2}\\+DE\\]|ger,\\s*[a-z]{3}\\]|\\[[a-z]{3}\\s*,\\s*ger\\]"
+      }
+    },
+    {
+      "name": "NOT German Language",
+      "implementation": "LanguageSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 4
       }
     }
   ]
@@ -1017,3 +1035,4 @@ In the Quality Profile settings, set the scores for the custom format as follows
 | 2023-08-22 | Added BluRay/Remux custom formats for Sonarr because Sonarr doesn't have the Quality Modifier filter  |
 | 2023-08-27 | Added different Web-DL/WebRip custom formats for Sonarr and Radarr as they use different internal ids  |
 | 2023-09-30 | Added "German DL 2" custom format to detect dual language releases which have been identified correctly by Sonarr/Radarr but don't have "German DL" in their name |
+| 2024-01-30 | Fixed English/German only custom formats being wrongly detected if "German DL 2" custom format was also detected|
