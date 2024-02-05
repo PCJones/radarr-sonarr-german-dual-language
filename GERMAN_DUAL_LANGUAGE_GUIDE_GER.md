@@ -2,7 +2,7 @@
 
 In dieser Anleitung wird erklärt, wie Radarr und Sonarr konfiguriert werden können, um vollautomatisiert German Dual Language (Deutsche + Englische Tonspur) Releases zu bevorzugen.
 
-Letztes Update: 30.09.2023
+Letztes Update: 30.01.2024
 
 # [English Guide](https://github.com/PCJones/radarr-sonarr-german-dual-language/)
 
