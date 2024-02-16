@@ -1027,7 +1027,7 @@ In the Quality Profile settings, set the scores for the custom format as follows
 ## Contact & Support
 - Feel free to create an Issue if you need support. 
 - [Telegram](https://t.me/pc_jones)
-- Discord: pcjones1
+- Discord: pcjones1 - or join the UsenetDE Discord Server: [https://discord.gg/pZrrMcJMQM](https://discord.gg/pZrrMcJMQM)
 
 ## Changelog:
 | Date         | Change                                                                                                         |
@@ -1036,3 +1036,4 @@ In the Quality Profile settings, set the scores for the custom format as follows
 | 2023-08-27 | Added different Web-DL/WebRip custom formats for Sonarr and Radarr as they use different internal ids  |
 | 2023-09-30 | Added "German DL 2" custom format to detect dual language releases which have been identified correctly by Sonarr/Radarr but don't have "German DL" in their name |
 | 2024-01-30 | Fixed English/German only custom formats being wrongly detected if "German DL 2" custom format was also detected|
+| 2024-02-16 | Added invite link to the UsenetDE Discord Server|
