@@ -1029,3 +1029,9 @@ In den Einstellungen des Quality Profiles setze die Punktzahl für das Custom Fo
 - Öffne gerne ein Issue auf GitHub falls du Unterstützung benötigst.
 - [Telegram](https://t.me/pc_jones)
 - Discord: pcjones1 - oder komm in den UsenetDE Discord Server: [https://discord.gg/pZrrMcJMQM](https://discord.gg/pZrrMcJMQM)
+
+## Spenden
+Über eine Spende freue ich mich natürlich immer :D
+PayPal: https://paypal.me/pcjones1
+
+Für andere Spendenmöglichkeiten gerne auf Discord oder Telegram melden - danke!
