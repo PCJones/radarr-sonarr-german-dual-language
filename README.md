@@ -1029,6 +1029,12 @@ In the Quality Profile settings, set the scores for the custom format as follows
 - [Telegram](https://t.me/pc_jones)
 - Discord: pcjones1 - or join the UsenetDE Discord Server: [https://discord.gg/pZrrMcJMQM](https://discord.gg/pZrrMcJMQM)
 
+## Donations
+Of course I am always happy about a donation :D
+PayPal: https://paypal.me/pcjones1
+
+For other donation options please contact me on Discord or Telegram - thanks!
+
 ## Changelog:
 | Date         | Change                                                                                                         |
 |--------------|----------------------------------------------------------------------------------------------------------------|
