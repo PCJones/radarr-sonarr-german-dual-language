@@ -40,7 +40,7 @@ No problem at all! Just follow every step in the guide but skip every step about
 
 ## Guide
 
-### 0. Disable "Propers and Repacks Upgrade"
+### 0. Disable "Propers and Repacks" Upgrade
 By default, Radarr and Sonarr prefer Proper / Repack releases and upgrade to such in case they become available at a later stage. This logic neglects any custom format preferences that you will set henceforth, i.e. override language as well as quality preferences. Hence this option has to be disabled.
 To do so:
 1. Visit `Settings > Media Management` in both Radarr and Sonarr.
