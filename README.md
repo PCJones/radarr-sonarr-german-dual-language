@@ -40,6 +40,10 @@ No problem at all! Just follow every step in the guide but skip every step about
 
 ## Guide
 
+### 0. Disable "Propers and Repacks Upgrade"
+By default, Radarr and Sonarr prefer Proper / Repack releases and upgrade to such in case they become available at a later stage. This logic neglects any custom format preferences that you will set henceforth, i.e. override language as well as quality preferences, and hence has to be disabled.
+To do so: Visit `Settings > Media Management` in both Radarr and Sonarr. Enable `Advanced Settings` and scroll to / search for the `File Management` section. Set the respective option to `Do not prefer and upgrade` and hit `Save Changes`
+
 ### 1. Import the German DL Custom Formats
 If you don't know how to import custom formats have a look at this short guide:
 [How to import Custom Formats - Trash Guides](https://trash-guides.info/Radarr/Radarr-import-custom-formats/#how-to-import-a-json-custom-format)
