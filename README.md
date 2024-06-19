@@ -2,7 +2,7 @@
 
 This guide outlines how to configure and fully automate Radarr and Sonarr to prefer German + English dual releases.
 
-Last Updated: 2024-01-30
+Last Updated: 2024-05-30
 
 # [Deutsche Anleitung](https://github.com/PCJones/radarr-sonarr-german-dual-language/blob/main/GERMAN_DUAL_LANGUAGE_GUIDE_GER.md)
 
@@ -39,6 +39,13 @@ To reliably find German + English Dual Language releases (from now on referred t
 No problem at all! Just follow every step in the guide but skip every step about the "German DL" custom format. At [Prefer Language](#8-prefer-language) import the one that fits your setup and then **remove the "NOT German DL" condition** before saving. Sorry if this sounds complicated, I'll soon create an extra page just for this scenario!
 
 ## Guide
+
+### 0. Disable "Propers and Repacks" Upgrade
+By default, Radarr and Sonarr prefer Proper / Repack releases and upgrade to such in case they become available at a later stage. This logic neglects any custom format preferences that you will set henceforth, i.e. override language as well as quality preferences. Hence this option has to be disabled.
+To do so:
+1. Visit `Settings > Media Management` in both Radarr and Sonarr.
+2. Enable `Advanced Settings` and scroll to / search for the `File Management` section.
+3. Set the respective option to `Do not prefer and upgrade` and hit `Save Changes`
 
 ### 1. Import the German DL Custom Formats
 If you don't know how to import custom formats have a look at this short guide:
