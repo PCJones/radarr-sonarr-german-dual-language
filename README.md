@@ -244,7 +244,7 @@ Import the Custom Format "Language: English Only":
 
 ```json
 {
-  "name": " Language: English Only",
+  "name": "Language: English Only",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
