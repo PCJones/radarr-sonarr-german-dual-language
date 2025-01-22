@@ -1037,8 +1037,11 @@ In the Quality Profile settings, set the scores for the custom format as follows
 - Discord: pcjones1 - or join the UsenetDE Discord Server: [https://discord.gg/pZrrMcJMQM](https://discord.gg/pZrrMcJMQM)
 
 ## Donations
+
+## Spenden
 Of course I am always happy about a donation :D
-PayPal: https://paypal.me/pcjones1
+<a href="https://www.buymeacoffee.com/pcjones" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="60px" width="217px" ></a>
+<a href="https://coindrop.to/pcjones" target="_blank"><img src="https://coindrop.to/embed-button.png" style="border-radius: 10px; height: 57px !important;width: 229px !important;" alt="Coindrop.to me"></img></a>
 
 For other donation options please contact me on Discord or Telegram - thanks!
 
