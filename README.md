@@ -1034,7 +1034,7 @@ In the Quality Profile settings, set the scores for the custom format as follows
 ## Contact & Support
 - Feel free to create an Issue if you need support. 
 - [Telegram](https://t.me/pc_jones)
-- Discord: pcjones1 - or join the UsenetDE Discord Server: [https://discord.gg/pZrrMcJMQM](https://discord.gg/pZrrMcJMQM)
+- [UsenetDE Discord Server](https://discord.gg/src6zcH4rr)
 
 ## Donations
 
